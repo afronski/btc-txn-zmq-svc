@@ -1,0 +1,28 @@
+{
+  "name": "bitcoin-transactions-client",
+  "version": "1.0.0",
+  "description": "Visualizing Bitcoin transactions (ZeroMQ + Node.js).",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afronski/zeromq-in-nodejs"
+  },
+  "keywords": [
+    "zeromq",
+    "zmq",
+    "node",
+    "nodejs",
+    "bitcoin"
+  ],
+  "author": "Wojtek Gawroński (afronski@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afronski/zeromq-in-nodejs/issues"
+  },
+  "homepage": "https://github.com/afronski/zeromq-in-nodejs",
+  "dependencies": {
+    "handlebars": "~3.0.3",
+    "hapi": "~8.6.1",
+    "zmq": "~2.11.1"
+  }
+}
