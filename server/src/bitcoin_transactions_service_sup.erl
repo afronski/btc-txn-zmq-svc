@@ -8,7 +8,7 @@ start_link(Ctx) ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, Ctx).
 
 init(Ctx) ->
-    RestartStrategy = rest_for_one,
+    RestartStrategy = one_for_one,
     MaxRestarts = 5,
     MaxSecondsBetweenRestarts = 5000,
 
