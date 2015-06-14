@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="description" content="Simple UI for visualizing Bitcoin transactions over the world." />
+        <meta name="author" content="Wojtek Gawroński (afronski@gmail.com)" />
+
+        <title>Bitcoin Transactions :: Visualization</title>
+
+        <link rel="shortcut icon" href="//favicon.ico" />
+
+        <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Indie+Flower" type="text/css" /> -->
+        <link rel="stylesheet" href="//styles/main.css" />
+    </head>
+    <body>
+        <article>
+            <header>
+                <h1>Bitcoin Transactions</h1>
+                <h3>Visualization</h3>
+            </header>
+
+            <section class="map">
+            </section>
+
+            <section class="controls">
+                <button id="toggle-state">Start</button>
+            </section>
+        </article>
+
+        <script src="//socket.io/socket.io.js"></script>
+        <script src="//scripts/main.js"></script>
+    </body>
+</html>
