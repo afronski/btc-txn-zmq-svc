@@ -10,5 +10,5 @@ start_link(Ctx) ->
     {ok, Pid}.
 
 new_transaction(Hash, Lat, Lng) when is_list(Hash), is_float(Lat), is_float(Lng) ->
-    Payload = [ {hash, list_to_bitstring(Hash)}, {lat, Lat}, {lng, Lng} ],
+    Payload = [ {hash, list_to_bitstring(Hash)}, {lat, Lat}, {lng, Lng}, {type, <<"transaction">>} ],
     gen_event:notify(?MODULE, {transaction, Payload}).

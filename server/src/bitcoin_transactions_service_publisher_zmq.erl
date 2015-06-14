@@ -16,7 +16,7 @@ handle_call(_Request, State) ->
 
 handle_event({transaction, Payload}, Pub) ->
     JSON = jsx:encode(Payload),
-    ok = czmq:zstr_send(Pub, "transaction:" ++ JSON),
+    ok = czmq:zstr_send(Pub, JSON),
 
     {ok, Pub}.
 
