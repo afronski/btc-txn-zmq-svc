@@ -1,4 +1,4 @@
-# ZeroMQ in Node.js
+# `bitcoin-transactions-service-zmq`
 
 *TODO*
 
