@@ -1,4 +1,4 @@
-# `bitcoin-transactions-service-zmq`
+# `btc-txn-zmq-svc`
 
 *TODO*
 
