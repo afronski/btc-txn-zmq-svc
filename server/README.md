@@ -10,7 +10,8 @@
 
 ## TODO
 
-- [ ] `bitcoin_transaction_service` implementation.
-- [ ] `bitcoin_transaction_service_controller` commands.
+- `bitcoin_transaction_service_controller` commands.
+  - [ ] Start / Stop.
+  - [ ] Change bounds.
 - [ ] Add description here.
 - [ ] Add deployment procedure here.
