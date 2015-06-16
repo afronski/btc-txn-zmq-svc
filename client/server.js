@@ -31,8 +31,6 @@ web.views({
 });
 
 io.on("connection", function (socket) {
-    socket.emit("socket-connected", "Hello!");
-
     socket.on("disconnect", function () {
         console.info("User disconnected.");
     });
@@ -55,10 +53,11 @@ subscriber.on("message", function (data) {
 
     if (message.type === "transaction") {
         console.info("Received transaction: %j,", message);
+        io.emit("transaction", message);
     }
 });
 
-// Binding our socket.
+// Connecting to socket.
 subscriber.connect(process.env.PUBLISHER_ADDRESS || "tcp://localhost:9002");
 
 // 2. TCP based REQ-REP.
@@ -68,7 +67,5 @@ requester.on("message", function (data) {
     console.info("Received response: %s", data);
 });
 
-// Binding our socket.
+// Connecting to socket.
 requester.connect(process.env.REQUESTER_ADDRESS || "tcp://localhost:10020");
-
-setTimeout(function () { requester.send("start"); }, 2000);

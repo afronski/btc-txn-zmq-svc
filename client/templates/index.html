@@ -11,27 +11,32 @@
 
         <title>Bitcoin Transactions :: Visualization</title>
 
-        <link rel="shortcut icon" href="//favicon.ico" />
+        <link rel="shortcut icon" href="favicon.ico" />
 
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Indie+Flower" type="text/css" />
-        <link rel="stylesheet" href="//styles/main.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization"></script>
     </head>
     <body>
         <article>
+            <section id="controls">
+                <button id="toggle-state">Start</button>
+            </section>
+
             <header>
                 <h1>Bitcoin Transactions</h1>
                 <h3>Visualization</h3>
             </header>
 
-            <section class="map">
-            </section>
+            <section id="map"></section>
 
-            <section class="controls">
-                <button id="toggle-state">Start</button>
-            </section>
+            <footer>
+                <p><small>afronski (Wojtek Gawroński) - 2015</small></p>
+            </footer>
         </article>
 
-        <script src="//socket.io/socket.io.js"></script>
-        <script src="//scripts/main.js"></script>
+        <script src="socket.io/socket.io.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>
