@@ -1,7 +1,14 @@
 # `btc-txn-zmq-svc`
 
-*TODO*
+## What?
 
-## TODO
+Sample application which is a demonstration of usage for `ZeroMQ` in :
 
-- [ ] Brief description here (*date*, *place*, *project's overview*).
+- *Erlang*
+- *Node.js*
+
+It was used as a sample project for my talk at *Berlin.js* at *18th June 2015*.
+
+## Overview
+
+- [ ] TODO: Project overview.
