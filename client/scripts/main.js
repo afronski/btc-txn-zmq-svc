@@ -2,8 +2,8 @@
     "use strict";
 
     var europe = new google.maps.LatLngBounds(
-        new google.maps.LatLng(66.3, -10.9),
-        new google.maps.LatLng(42.3, 28.3)
+        new google.maps.LatLng(65.0, -12.0),
+        new google.maps.LatLng(42.0, 30.0)
     );
 
     function marker(options) {

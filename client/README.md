@@ -10,7 +10,10 @@
 
 ## TODO
 
-- [ ] Add simple UI with *Google Maps* - `hapi.js`.
-  - [ ] Sending commands as well.
+- Map:
+  - [ ] Showing bounds.
+- Sending commands:
+  - [ ] Start / Stop.
+  - [ ] Changing bounds.
 - [ ] Add description here.
 - [ ] Add deployment procedure here.
