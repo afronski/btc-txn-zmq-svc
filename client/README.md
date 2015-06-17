@@ -10,5 +10,6 @@
 
 ## TODO
 
+- [ ] Update bounds after changing it.
 - [ ] Add description here.
 - [ ] Add deployment procedure here.
