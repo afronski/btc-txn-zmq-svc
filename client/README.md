@@ -1,14 +1,9 @@
 # `bitcoin-transactions-client`
 
-## Description
-
-*TODO*
-
 ## How to run and deploy it?
 
-*TODO*
+### `localhost`
 
-## TODO
-
-- [ ] Add description here.
-- [ ] Add deployment procedure here.
+1. `npm install`
+2. `npm run start`
+3. Point your browser at `http://localhost:8080`.

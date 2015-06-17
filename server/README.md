@@ -1,14 +1,9 @@
 # `bitcoin_transactions_service`
 
-## Description
-
-*TODO*
-
 ## How to run and deploy it?
 
-*TODO*
+### `localhost`
 
-## TODO
-
-- [ ] Add description here.
-- [ ] Add deployment procedure here.
+1. `rebar3 compile`
+2. `rebar3 shell`
+3. `application:ensure_all_started(bitcoin_transactions_service).`
