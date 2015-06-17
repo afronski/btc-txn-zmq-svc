@@ -30,14 +30,6 @@ web.views({
     path: path.join(__dirname, "templates")
 });
 
-io.on("connection", function (socket) {
-    socket.on("disconnect", function () {
-        console.info("User disconnected.");
-    });
-});
-
-web.start();
-
 //--------------------------
 //-- ZeroMQ related code. --
 //--------------------------
@@ -69,3 +61,26 @@ requester.on("message", function (data) {
 
 // Connecting to socket.
 requester.connect(process.env.REQUESTER_ADDRESS || "tcp://localhost:10020");
+
+// Handling events from 'socket.io'.
+io.on("connection", function (socket) {
+    socket.on("start", function () {
+        requester.send("toggle-state:start");
+    });
+
+    socket.on("stop", function () {
+        requester.send("toggle-state:stop");
+    });
+
+    socket.on("coordinates-changed", function (result) {
+        requester.send("coordinates-changed:" + JSON.stringify(result));
+    });
+
+    socket.on("disconnect", function () {
+        console.info("User disconnected.");
+    });
+});
+
+// Starting the web service.
+web.start();
+

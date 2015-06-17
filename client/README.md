@@ -10,10 +10,5 @@
 
 ## TODO
 
-- Map:
-  - [ ] Showing bounds.
-- Sending commands:
-  - [ ] Start / Stop.
-  - [ ] Changing bounds.
 - [ ] Add description here.
 - [ ] Add deployment procedure here.

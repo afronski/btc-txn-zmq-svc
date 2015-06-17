@@ -84,9 +84,30 @@ button[disabled] {
 
 footer {
     border-top: 1px solid gray;
-
     padding: 5px;
 
     clear: both;
     text-align: center;
+}
+
+.coordinates {
+    margin-top: 2px;
+}
+
+.coordinates input {
+    width: 100px;
+}
+
+input {
+  border: 0;
+  background: none;
+
+  text-align: center;
+  padding: 2px;
+
+  color: #333333;
+  background-color: #FFFFFF;
+
+  margin: 1px;
+  cursor: pointer;
 }
