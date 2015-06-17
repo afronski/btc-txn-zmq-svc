@@ -1,25 +1,36 @@
 -module(bitcoin_transactions_service).
 -behaviour(gen_server).
 
--export([ start_link/1 ]).
+-export([ start_link/1, start/0, stop/0, change_coordinates/1 ]).
 -export([ handle_call/3, handle_cast/2, handle_info/2, init/1, terminate/2, code_change/3 ]).
 
 start_link(Ctx) ->
     gen_server:start_link({local, ?MODULE}, ?MODULE, Ctx, []).
 
+start() ->
+    gen_server:call(?MODULE, start).
+
+stop() ->
+    gen_server:call(?MODULE, stop).
+
+change_coordinates(Coordinates) ->
+    gen_server:call(?MODULE, {change_coordinates, Coordinates}).
+
 init(Ctx) ->
     << A:32, B:32, C:32 >> = crypto:rand_bytes(12),
     random:seed({A,B,C}),
 
-    MinLng = application:get_env(bitcoin_transactions_service, min_lng, -12),
-    MaxLng = application:get_env(bitcoin_transactions_service, max_lng, 30),
+    MinLng = application:get_env(bitcoin_transactions_service, min_lng, -25),
+    MaxLng = application:get_env(bitcoin_transactions_service, max_lng, 40),
 
-    MinLat = application:get_env(bitcoin_transactions_service, min_lat, 42),
-    MaxLat = application:get_env(bitcoin_transactions_service, max_lat, 65),
+    MinLat = application:get_env(bitcoin_transactions_service, min_lat, 31),
+    MaxLat = application:get_env(bitcoin_transactions_service, max_lat, 71),
 
     Timer = erlang:send_after(1, self(), new_transaction),
 
     {ok, { Ctx, Timer, {MinLat, MaxLat, MinLng, MaxLng} }}.
+
+%% TODO: Add proper call handlers for 'start', 'stop' and 'change_coordinates'.
 
 handle_call(_Command, _From, State) ->
     {reply, empty, State}.
