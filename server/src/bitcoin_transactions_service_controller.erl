@@ -12,18 +12,15 @@ handle_messages(Rep, { ok, Message }) ->
     case Message of
         "toggle-state:start" ->
             bitcoin_transactions_service:start(),
-
             czmq:zstr_send(Rep, "START-ACK");
 
         "toggle-state:stop" ->
             bitcoin_transactions_service:stop(),
-
             czmq:zstr_send(Rep, "STOP-ACK");
 
         "coordinates-changed:" ++ JSON ->
             Coordinates = jsx:decode(list_to_binary(JSON)),
             bitcoin_transactions_service:change_coordinates(Coordinates),
-
             czmq:zstr_send(Rep, "COORDINATES-ACK");
 
         _ ->

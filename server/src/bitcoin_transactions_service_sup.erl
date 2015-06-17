@@ -29,7 +29,7 @@ init(Ctx) ->
                  [ bitcoin_transactions_service_publisher ]},
 
     Core = {bitcoin_transactions_service,
-            {bitcoin_transactions_service, start_link, [ Ctx ]},
+            {bitcoin_transactions_service, start_link, []},
             Restart, Shutdown, Type,
             [ bitcoin_transactions_service ]},
 
