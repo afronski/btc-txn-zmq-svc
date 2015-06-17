@@ -60,7 +60,7 @@ header h3 {
     text-align: center;
 }
 
-button {
+input[type="button"] {
   border: 0;
   background: none;
 
@@ -74,11 +74,11 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+input[type="button"]:hover {
   background-color: #EAEAEA;
 }
 
-button[disabled] {
+input[type="button"][disabled] {
   opacity: 0.5;
 }
 
@@ -98,7 +98,7 @@ footer {
     width: 100px;
 }
 
-input {
+input[type="number"] {
   border: 0;
   background: none;
 

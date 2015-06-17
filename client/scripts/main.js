@@ -14,22 +14,29 @@
         return new google.maps.LatLng(lat, lng);
     }
 
-    function coordinatesChanged(socket, coordinates) {
+    function coordinatesChanged(socket, coordinates, rectangle, map) {
         var result = coordinates.reduce(function (object, input) {
             object[input.getAttribute("id")] = parseFloat(input.value);
             return object;
         }, {});
 
         socket.emit("coordinates-changed", result);
+
+        var newBounds = new google.maps.LatLngBounds(
+            new google.maps.LatLng(result["nw-corner-lat"], result["nw-corner-lng"]),
+            new google.maps.LatLng(result["se-corner-lat"], result["se-corner-lng"])
+        );
+
+        rectangle.setBounds(newBounds);
     }
 
     function toggleState(button, socket) {
-        if (button.innerText === "Start") {
+        if (button.value === "Start") {
             socket.emit("start");
-            button.innerText = "Stop";
+            button.value = "Stop";
         } else {
             socket.emit("stop");
-            button.innerText = "Start";
+            button.value = "Start";
         }
     }
 
@@ -73,7 +80,7 @@
         var button = document.getElementById("toggle-state");
 
         button.addEventListener("click", function () {
-            toggleState.call(this, this, socket);
+            toggleState(this, socket);
         });
 
         var coordinates = [
@@ -85,9 +92,11 @@
 
         coordinates.forEach(function (input) {
             input.addEventListener("change", function () {
-                coordinatesChanged.call(this, socket, coordinates);
+                coordinatesChanged(socket, coordinates, rectangle, map);
             });
         });
+
+        coordinatesChanged(socket, coordinates, rectangle, map);
     }
 
     google.maps.event.addDomListener(window, "load", init);
