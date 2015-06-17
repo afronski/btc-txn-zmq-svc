@@ -2,7 +2,7 @@
 
 ## What?
 
-**This is a *pet project***.
+**This is a pet project**.
 
 Sample application which is a demonstration of usage for `ZeroMQ` in :
 
@@ -21,4 +21,4 @@ Basically it is a very simple `UI` which contains a *Google Map* widget, on top 
 
 Underneath it is a simple *server* and *client* architecture which uses *ZeroMQ* library as a communication mechanism. *Server* is written in *Erlang* (which use `gar1t/erlang-czmq` library), client is written in *Node.js* (and uses `JustinTulloss/zeromq.node`). This application structure can be approximated with a following diagram:
 
-![Architecture diagram](docs/diagram.jpg)
+.center[![Architecture diagram](docs/diagram.jpg)]
