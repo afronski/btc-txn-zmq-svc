@@ -84,3 +84,14 @@ io.on("connection", function (socket) {
 // Starting the web service.
 web.start();
 
+// Handling OS signals properly.
+process.on("SIGTERM", function () {
+    console.info("Shutting down...");
+
+    web.stop();
+
+    requester.close();
+    subscriber.close();
+
+    process.exit(0);
+});
